@@ -17,7 +17,7 @@
 
 params ["_unit"];
 
-if (GVAR(allowWalkingWhileCaptiv) && {isPlayer _unit} && {!(_unit getVariable ["ace_captives_isEscorting", false])}) then {
+if (GVAR(allowWalkingWhileCaptiv) && {isPlayer _unit} && {!(_unit getVariable [QGVAR(isEscorting), false])}) then {
    if (currentWeapon _unit == "") then {
       [_unit] call FUNC(handcuffedWalkAnim);
    } else {
@@ -26,7 +26,7 @@ if (GVAR(allowWalkingWhileCaptiv) && {isPlayer _unit} && {!(_unit getVariable ["
 
       _handle = [{
          params ["_unit", "_handle"];
-         if (!(alive _unit) || {!(_unit getVariable ["ace_captives_isHandcuffed", false])} || {vehicle _unit != _unit}) exitWith {
+         if (!(alive _unit) || {!(_unit getVariable [QGVAR(isHandcuffed), false])} || {vehicle _unit != _unit}) exitWith {
             [_handle] call CBA_fnc_removePerFrameHandler;
             _unit setVariable [QGVAR(PFH), -1];
             [_unit, "AnimCableStandEnd"] call EFUNC(common,doGesture);

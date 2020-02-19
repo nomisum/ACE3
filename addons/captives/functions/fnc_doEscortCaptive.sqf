@@ -47,8 +47,6 @@ if (_state) then {
         QUOTE(!isNull GETVAR(_target,QGVAR(escortedUnit),objNull))
     ];
 
-    diag_log format ["add action menu %1", _actionID];
-
     [{
         params ["_args", "_pfID"];
         _args params ["_unit", "_target", "_actionID"];
