@@ -71,3 +71,11 @@ class Extended_Killed_EventHandlers {
         };
     };
 };
+
+class Extended_InteractMenuOpened_EventHandlers {
+    class CAManBase {
+        class ADDON {
+            ace_interactMenuOpened = QUOTE(_this call FUNC(interactEH));
+        };
+    };
+};

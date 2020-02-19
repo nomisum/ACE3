@@ -55,7 +55,7 @@ systemChat "interactEH 1";
                         private _helper = "ACE_LogicDummy" createVehicleLocal [0,0,0];
                         private _action = [
                             QGVAR(rubFree),
-                            "Kabelbinder am Baum aufreiben",
+                            "Kabelbinder aufreiben",
                             "\z\ace\addons\captives\ui\handcuff_ca.paa", 
                             _fncStatement, 
                             _fncCondition, 
