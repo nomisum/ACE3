@@ -469,5 +469,37 @@
             <Czech>Nastaví jednotku pod kurzorem jako zajatce.</Czech>
             <Spanish>Establece a la unidad bajo el cursor como prisionera</Spanish>
         </Key>
+        <Key ID="STR_ACE_Captives_functions_settingAllowWalkingWhileCaptiv_displayName">
+            <English>Allow Captives walking</English>
+            <German>Gefangenen laufen erlauben</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_settingAllowWalkingWhileCaptiv_tooltip">
+            <English>Allow Captives walking</English>
+            <German>Gefangenen laufen erlauben</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_settingCategory">
+            <English>CaptiveWalkingAnimation</English>
+            <German>CaptiveWalkingAnimation</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_settingDisableEscorting_displayName">
+            <English>Disable player escorting</English>
+            <German>Spieler Escortieren deaktivierenn</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_settingDisableEscorting_tooltip">
+            <English>Disable the escorting for Players</English>
+            <German>Deaktiviert das eskortieren von Spielern</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_allowFreeing_displayName">
+            <English>Allow freeing</English>
+            <German>Entfesseln erlauben</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_allowFreeing_tooltip">
+            <English>Allows the player to remove his cuffs on a Tree or Rock</English>
+            <German>Erlaubt es, dass ein Spieler seine Fesseln an einem Baum oder Felsen entfernt</German>
+        </Key>
+        <Key ID="STR_ACE_Captives_functions_freeingTime">
+            <English>Freeing time</English>
+            <German>Befreiungszeit</German>
+        </Key>
     </Package>
 </Project>
