@@ -17,10 +17,11 @@
  * Public: No
  */
 
-params ["_unit", "_target","_state"];
+params ["_unit", "_target", "_state"];
 
 if (_state) then {
-    if (_unit getVariable [QGVAR(isEscorting), false]) exitWith {};
+
+    if (_unit getVariable [QGVAR(isEscorting), false] || {(isPlayer _target && GVAR(disableEscorting))}) exitWith {};
 
     [_unit, _target, false] call EFUNC(common,claim);
     _unit setVariable [QGVAR(isEscorting), true, true];
@@ -29,17 +30,37 @@ if (_state) then {
 
     _unit setVariable [QGVAR(escortedUnit), _target, true];
 
+    if (isPlayer _target) then {
+      _target setVariable [QGVAR(animation), "ACE_AmovPercMstpScapWnonDnon"];
+      [_target, "ACE_AmovPercMstpScapWnonDnon", 1] call EFUNC(common,doAnimation);
+   };
+
     //Add Actionmenu to release captive
-    private _actionID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize LSTRING(StopEscorting)],
-    {[(_this select 0), ((_this select 0) getVariable [QGVAR(escortedUnit), objNull]), false] call FUNC(doEscortCaptive);},
-    nil, 20, false, true, "", QUOTE(!isNull GETVAR(_target,QGVAR(escortedUnit),objNull))];
+    private _actionID = _unit addAction [
+        format ["<t color='#FF0000'>%1</t>", localize LSTRING(StopEscorting)],
+        {[(_this select 0), ((_this select 0) getVariable [QGVAR(escortedUnit), objNull]), false] call FUNC(doEscortCaptive);},
+        nil, 
+        20, 
+        false, 
+        true, 
+        "", 
+        QUOTE(!isNull GETVAR(_target,QGVAR(escortedUnit),objNull))
+    ];
 
     [{
         params ["_args", "_pfID"];
         _args params ["_unit", "_target", "_actionID"];
 
         if (_unit getVariable [QGVAR(isEscorting), false]) then {
-            if (!alive _target || {!alive _unit} || {!canStand _target} || {!canStand _unit} || {_target getVariable ["ACE_isUnconscious", false]} || {_unit getVariable ["ACE_isUnconscious", false]} || {!isNull (attachedTo _unit)}) then {
+            if (
+                !alive _target || 
+                {!alive _unit} || 
+                {!canStand _target} || 
+                {!canStand _unit} || 
+                {_target getVariable ["ACE_isUnconscious", false]} || 
+                {_unit getVariable ["ACE_isUnconscious", false]} || 
+                {!isNull (attachedTo _unit)}
+            ) then {
                 _unit setVariable [QGVAR(isEscorting), false, true];
             };
         };
@@ -56,4 +77,10 @@ if (_state) then {
 } else {
     _unit setVariable [QGVAR(isEscorting), false, true];
     _unit setVariable [QGVAR(escortedUnit), objNull, true];
+
+    if (isPlayer _unit) then {
+      _unit setVariable [QGVAR(animation), "AnimCableStandLoop"];
+      [_unit, "amovpercmstpsnonwnondnon", 1] call EFUNC(common,doAnimation);
+      [_unit, "AnimCableStandLoop"] call EFUNC(common,doGesture);
+   };
 };

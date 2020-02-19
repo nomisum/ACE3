@@ -30,6 +30,13 @@ if (local _unit) then {
     };
 
     if (_unit getVariable [QGVAR(isHandcuffed), false]) then {
+
+        //remove animation handle
+        private _pfh = _unit getVariable [QGVAR(PFH), -1];
+        if (_pfh != -1) then {
+           [_pfh] call CBA_fnc_removePerFrameHandler;
+        };
+        
         //Need to force animation for FFV turrets
         private _turretPath = [];
         {

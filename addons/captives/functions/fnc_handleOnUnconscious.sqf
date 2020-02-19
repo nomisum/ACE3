@@ -29,6 +29,6 @@ if (_isUnconc) then {
     //Woke up: if handcuffed, goto animation
     if (_unit getVariable [QGVAR(isHandcuffed), false] && {vehicle _unit == _unit}) then {
         [_unit] call EFUNC(common,fixLoweredRifleAnimation);
-        [_unit, "ACE_AmovPercMstpScapWnonDnon", 1] call EFUNC(common,doAnimation);
+        [_unit] call  FUNC(handleCaptivAnim);
     };
 };

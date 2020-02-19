@@ -29,7 +29,6 @@ if ((local _unit) && {_unit getVariable [QGVAR(isHandcuffed), false]}) then {
         _unit moveInCargo [_vehicle, _cargoIndex];
     } else {
         //Getting out of vehicle:
-        [_unit, "ACE_AmovPercMstpScapWnonDnon", 2] call EFUNC(common,doAnimation);
-        [_unit, "ACE_AmovPercMstpScapWnonDnon", 1] call EFUNC(common,doAnimation);
+        [_unit] call FUNC(handleCaptivAnim);
     };
 };

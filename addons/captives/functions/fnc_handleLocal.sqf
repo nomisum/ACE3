@@ -27,9 +27,7 @@ if (_local) then {
         if (_unit getVariable [QGVAR(handcuffAnimEHID), -1] != -1) exitWith {};
 
         // Otherwise, restart the AnimChanged EH in the new machine
-        private _animChangedEHID = _unit addEventHandler ["AnimChanged", {call FUNC(handleAnimChangedHandcuffed)}];
-        TRACE_2("Adding animChangedEH",_unit,_animChangedEHID);
-        _unit setVariable [QGVAR(handcuffAnimEHID), _animChangedEHID];
+        [_unit] call FUNC(animChangeEh);
     };
 
     // If the unit is surrendering
@@ -51,6 +49,7 @@ if (_local) then {
         TRACE_1("Removing animChanged EH",_animChangedEHID);
         _unit removeEventHandler ["AnimChanged", _animChangedEHID];
         _unit setVariable [QGVAR(handcuffAnimEHID), -1];
+        [_unit, "AnimCableStandEnd"] call EFUNC(common,doGesture);
     };
 
     _animChangedEHID = _unit getVariable [QGVAR(surrenderAnimEHID), -1];
