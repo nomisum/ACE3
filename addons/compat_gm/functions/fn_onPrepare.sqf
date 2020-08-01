@@ -16,8 +16,11 @@
  */
 params ["_vehicle"];
 
+systemChat "onPrepare";
+
 _vehicle setVariable [QEGVAR(fastroping,doorsLocked), true, true];
-_vehicle animateDoor ["LeftDoor", 1];
+_vehicle animateDoor ["door_2_1_source", 1];
+_vehicle animateDoor ["door_2_2_source", 1];
 
 [{
     params ["_vehicle"];

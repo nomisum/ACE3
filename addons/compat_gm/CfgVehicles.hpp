@@ -8,6 +8,47 @@ class CfgVehicles {
         EGVAR(map,vehicleLightColor)[] = {1,0,0,0.1};
         EGVAR(refuel,fuelCapacity) = 3700;
         EGVAR(fastroping,enabled) = 0;
+
+        class UserActions
+            {
+                class openDoor_L
+                {
+                    displayNameDefault = "Open left Door";
+                    displayName = "Open left Door";
+                    position = "";
+                    radius = 2.7;
+                    onlyForPlayer = 1;
+                    condition = QUOTE((this doorPhase 'door_2_1_source' < 0.5) && {alive this} && {!(this getVariable [ARR_2(QUOTE(QEGVAR(fastroping,doorsLocked)),false)])});
+                    statement = QUOTE(this animateSource ['door_2_1_source',1]);
+                };
+
+                class openDoor_R: openDoor_L
+                {
+                    displayNameDefault = "Open right Door";
+                    displayName = "Open right Door";
+                    condition = QUOTE((this doorPhase 'door_2_2_source' < 0.5) && {alive this} && {!(this getVariable [ARR_2(QUOTE(QEGVAR(fastroping,doorsLocked)),false)])});
+                    statement = QUOTE(this animateSource ['door_2_2_source',1]);
+                };
+
+                class closeDoor_L
+                {
+                    displayNameDefault = "Close left Door";
+                    displayName = "Close left Door";
+                    position = "";
+                    radius = 2.7;
+                    onlyForPlayer = 1;
+                    condition = QUOTE((this doorPhase 'door_2_1_source' > 0.5) && {alive this} && {!(this getVariable [ARR_2(QUOTE(QEGVAR(fastroping,doorsLocked)),false)])});
+                    statement = QUOTE(this animateSource ['door_2_1_source',0]);
+                };
+
+                class closeDoor_R: closeDoor_L
+                {
+                    displayNameDefault = "Close right Door";
+                    displayName = "Close right Door";
+                    condition = QUOTE((this doorPhase 'door_2_2_source' > 0.5) && {alive this} && {!(this getVariable [ARR_2(QUOTE(QEGVAR(fastroping,doorsLocked)),false)])});
+                    statement = QUOTE(this animateSource ['door_2_2_source',0]);
+                };
+            };
     };
     class gm_bo105p1m_vbh_base;
     class gm_bo105p1m_vbh_swooper_base: gm_bo105p1m_vbh_base {
