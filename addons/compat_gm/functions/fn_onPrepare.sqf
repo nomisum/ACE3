@@ -21,7 +21,7 @@ _vehicle animateDoor ["LeftDoor", 1];
 
 [{
     params ["_vehicle"];
-    _vehicle animate ["swooperRopes_unhide",0];    
+    _vehicle animateSource ["swooperRopes_unhide",0];    
 }, [_vehicle], 2] call CBA_fnc_waitAndExecute;
 
 2
