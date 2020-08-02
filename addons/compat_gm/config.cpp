@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "\z\ace\addons\csw\script_config_macros_csw.hpp"
 
 class CfgPatches {
     class ADDON {
@@ -14,4 +15,5 @@ class CfgPatches {
     };
 };
 
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
