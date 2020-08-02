@@ -16,10 +16,18 @@
  */
 params ["_vehicle"];
 
-systemChat "onPrepare";
-
-_vehicle setVariable [QEGVAR(fastroping,doorsLocked), true, true];
-_vehicle animateDoor ["door_2_1_source", 1];
-_vehicle animateDoor ["door_2_2_source", 1];
+switch (true) do {
+    case (_vehicle isKindOf "gm_ge_army_bo105p1m_vbh_swooper"): {
+        _vehicle setVariable [QEGVAR(fastroping,doorsLocked), true, true];
+        _vehicle animateDoor ["door_2_1_source", 1];
+        _vehicle animateDoor ["door_2_2_source", 1];
+    };
+    case (_vehicle isKindOf "gm_ch53_base"): {
+        _vehicle setVariable [QEGVAR(fastroping,doorsLocked), true, true];
+        _vehicle animateDoor ["cargoramp_source", 1];
+        _vehicle animateSource ["slingloadlights_source", 1];
+    };
+    default {};
+};
 
 2

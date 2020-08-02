@@ -59,4 +59,17 @@ class CfgVehicles {
         EGVAR(fastroping,onDeployRopes) = QFUNC(onDeployRopes);
         EGVAR(fastroping,onPrepare) = QFUNC(onPrepare);
     };
+
+    class gm_ch53_base:gm_helicopter_base {
+        EGVAR(map,vehicleLightColor)[] = {1,0,0,0.1};
+        EGVAR(fastroping,enabled) = 1;
+        EGVAR(fastroping,ropeOrigins)[] = {{0.6, -5.2, -0.8},{-0.6, -5.2, -0.8}};
+        EGVAR(refuel,fuelCapacity) = 3850;
+        EGVAR(fastroping,onCut) = QFUNC(onCut);
+        EGVAR(fastroping,onPrepare) = QFUNC(onPrepare);
+    };
+
+    class gm_ch53g_base: gm_ch53_base {
+        EGVAR(refuel,fuelCapacity) = 8770;
+    };
 };

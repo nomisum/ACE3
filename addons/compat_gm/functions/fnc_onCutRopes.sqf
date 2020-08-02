@@ -17,8 +17,6 @@
  */
 params ["_vehicle"];
 
-systemChat "onCutRopes";
-
 _vehicle animateSource ["swooperRopes_unhide",1, true];
 
 0

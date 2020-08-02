@@ -17,8 +17,6 @@
  */
 params ["_vehicle"];
 
-systemChat "onDeploy";
-
 _vehicle animateSource ["swooperRopes_unhide",0, true];
 
 0
