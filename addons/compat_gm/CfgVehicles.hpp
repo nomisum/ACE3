@@ -82,31 +82,20 @@ class CfgVehicles {
         EGVAR(fastroping,onPrepare) = QFUNC(onPrepare);
     };
 
-    class gm_gc_airforce_mi2sr {
+    
+    class gm_mi2sr_base: gm_mi2_base {
         EGVAR(refuel,fuelCapacity) = 1076;
     };
 
-    class gm_gc_airforce_mi2p {
+    class gm_mi2p_base: gm_mi2_base {
         EGVAR(refuel,fuelCapacity) = 1076;
     };
 
-    class gm_gc_bgs_mi2p {
+    class gm_mi2ch_base: gm_mi2_base {
         EGVAR(refuel,fuelCapacity) = 1076;
     };
 
-    class gm_pl_airforce_mi2ch {
-        EGVAR(refuel,fuelCapacity) = 1076;
-    };
-
-    class gm_pl_airforce_mi2p {
-        EGVAR(refuel,fuelCapacity) = 1076;
-    };
-
-    class gm_pl_airforce_mi2platan {
-        EGVAR(refuel,fuelCapacity) = 1076;
-    };
-
-    class gm_pl_airforce_mi2sr {
+    class gm_mi2platan_base: gm_mi2_base{
         EGVAR(refuel,fuelCapacity) = 1076;
     };
     
