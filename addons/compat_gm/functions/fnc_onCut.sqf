@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: nomisum
- * Function for closing doors and retracting the rope for GM helos.
+ * Function for closing doors for GM helos.
  *
  * Arguments:
  * 0: Helicopter <OBJECT>
@@ -21,10 +21,5 @@ systemChat "onCut";
 _vehicle setVariable [QEGVAR(fastroping,doorsLocked), false, true];
 _vehicle animateDoor ["door_2_1_source", 0];
 _vehicle animateDoor ["door_2_2_source", 0];
-
-[{
-    params ["_vehicle"];
-    _vehicle animateSource ["swooperRopes_unhide",1, true];    
-}, [_vehicle], 2] call CBA_fnc_waitAndExecute;
 
 2

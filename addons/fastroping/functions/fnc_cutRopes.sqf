@@ -16,6 +16,8 @@
  */
 params ["_vehicle"];
 
+private _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
+
 private _deployedRopes = _vehicle getVariable [QGVAR(deployedRopes), []];
 {
     _x params ["", "_ropeTop", "_ropeBottom", "_dummy", "_hook", "_occupied"];
@@ -38,6 +40,12 @@ private _deployedRopes = _vehicle getVariable [QGVAR(deployedRopes), []];
 } count _deployedRopes;
 
 _vehicle setVariable [QGVAR(deployedRopes), [], true];
+
+
+// allow animations when ropes are falling
+if (isText (_config >> QGVAR(onCutRopes))) then {
+    [_vehicle] call (missionNamespace getVariable (getText (_config >> QGVAR(onCutRopes))));
+};
 
 // Set new state (0 if no FRIES, 2 if FRIES for manual stowing)
 private _newState = [0, 2] select (isText (configFile >> "CfgVehicles" >> typeOf _vehicle >> QGVAR(onCut)));

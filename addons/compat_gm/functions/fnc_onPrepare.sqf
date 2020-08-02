@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: nomisum
- * Function for opening doors and extending the rope for most GM helos.
+ * Function for opening doors for most GM helos.
  *
  * Arguments:
  * 0: Helicopter <OBJECT>
@@ -21,10 +21,5 @@ systemChat "onPrepare";
 _vehicle setVariable [QEGVAR(fastroping,doorsLocked), true, true];
 _vehicle animateDoor ["door_2_1_source", 1];
 _vehicle animateDoor ["door_2_2_source", 1];
-
-[{
-    params ["_vehicle"];
-    _vehicle animateSource ["swooperRopes_unhide",0, true];    
-}, [_vehicle], 2] call CBA_fnc_waitAndExecute;
 
 2

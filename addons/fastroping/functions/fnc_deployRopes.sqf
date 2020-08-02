@@ -71,6 +71,15 @@ if (GVAR(requireRopeItems) && {_ropeClass != ""}) then {
     false
 } count _ropeOrigins;
 
-_vehicle setVariable [QGVAR(deployedRopes), _deployedRopes, true];
-_vehicle setVariable [QGVAR(deploymentStage), 3, true];
-_vehicle setVariable [QGVAR(ropeLength), _ropeLength, true];
+// allow animations when ropes are deployed
+private _waitTime = 0;
+if (isText (_config >> QGVAR(onDeployRopes))) then {
+    _waitTime = [_vehicle] call (missionNamespace getVariable (getText (_config >> QGVAR(onDeployRopes))));
+};
+
+[{
+    params ["_vehicle", "_deployedRopes", "_ropeLength"];
+    _vehicle setVariable [QGVAR(deployedRopes), _deployedRopes, true];
+    _vehicle setVariable [QGVAR(deploymentStage), 3, true];
+    _vehicle setVariable [QGVAR(ropeLength), _ropeLength, true];
+}, [_vehicle, _deployedRopes, _ropeLength], _waitTime] call CBA_fnc_waitAndExecute;
