@@ -27,6 +27,10 @@ switch (true) do {
         _vehicle animateDoor ["cargoramp_source", 0];
         _vehicle animateSource ["slingloadlights_source", 0];
     };
+    case (_vehicle isKindOf "gm_mi2_base"): {
+        _vehicle setVariable [QEGVAR(fastroping,doorsLocked), false, true];
+        _vehicle animate ["door_2_1_anim", 0]; // animateSource/animateDoor didnt work
+    };
     default {};
 };
 

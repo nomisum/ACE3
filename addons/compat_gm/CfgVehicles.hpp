@@ -72,4 +72,42 @@ class CfgVehicles {
     class gm_ch53g_base: gm_ch53_base {
         EGVAR(refuel,fuelCapacity) = 8770;
     };
+
+    class gm_mi2_base:gm_helicopter_base {
+        EGVAR(map,vehicleLightColor)[] = {1,0,0,0.1};
+        EGVAR(fastroping,enabled) = 1;
+        EGVAR(fastroping,ropeOrigins)[] = {{-1.17969,0.0205078,-0.178533}};
+        EGVAR(refuel,fuelCapacity) = 600;
+        EGVAR(fastroping,onCut) = QFUNC(onCut);
+        EGVAR(fastroping,onPrepare) = QFUNC(onPrepare);
+    };
+
+    class gm_gc_airforce_mi2sr {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+
+    class gm_gc_airforce_mi2p {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+
+    class gm_gc_bgs_mi2p {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+
+    class gm_pl_airforce_mi2ch {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+
+    class gm_pl_airforce_mi2p {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+
+    class gm_pl_airforce_mi2platan {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+
+    class gm_pl_airforce_mi2sr {
+        EGVAR(refuel,fuelCapacity) = 1076;
+    };
+    
 };
