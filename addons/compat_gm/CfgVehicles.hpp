@@ -1,9 +1,185 @@
 class CfgVehicles {
+
+    // W H E E L E D
+    class gm_wheeled_base;
+    class gm_wheeled_truck_base;
+    class gm_wheeled_APC_base;
+    class gm_wheeled_motorcycle_base;
+
+    // EAST
+
+    class gm_wheeled_car_base: gm_wheeled_base {
+        EGVAR(cargo,hasCargo) = 1;
+        EGVAR(cargo,space) = 4;
+        EGVAR(refuel,canReceive) = 1;
+    };  
+
+    class gm_wheeled_bicycle_base: gm_wheeled_base {
+        EGVAR(cargo,hasCargo) = 0;
+        EGVAR(refuel,canReceive) = 0;
+    };
+
+    class gm_p601_base: gm_wheeled_car_base {
+        EGVAR(refuel,fuelCapacity) = 26;
+    };
+    
+    class gm_brdm2_base: gm_wheeled_APC_base {
+        EGVAR(refuel,fuelCapacity) = 290;
+    };
+
+    class gm_btr60_base: gm_wheeled_APC_base {
+        EGVAR(refuel,fuelCapacity) = 290;
+    };
+
+    class gm_ural4320_base: gm_wheeled_truck_base {
+        EGVAR(refuel,fuelCapacity) = 360;
+    };
+
+    class gm_ural4320_reammo_base: gm_ural4320_base {
+        transportAmmo = 0;
+        EGVAR(rearm,defaultSupply) = 1200;
+    };
+
+    class gm_ural4320_refuel_base: gm_ural4320_base {
+        transportFuel = 0;
+        EGVAR(refuel,hooks)[] = {{-0.05,-3.6,-0.45}};
+        EGVAR(refuel,fuelCargo) = 10000;
+    };
+
+    class gm_ural4320_medic_base: gm_ural4320_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+
+    class gm_ural4320_repair_base: gm_ural4320_base {
+        transportRepair = 0;
+        EGVAR(repair,canRepair) = 1;
+    };
+
+
+    // WEST    
+
+    class gm_k125_base: gm_wheeled_motorcycle_base {
+        EGVAR(refuel,fuelCapacity) = 14.5;
+    };
+
+    class gm_typ1_base: gm_wheeled_car_base {
+        EGVAR(refuel,fuelCapacity) = 47.3;
+    };
+
+    class gm_iltis_base: gm_wheeled_car_base {
+        EGVAR(refuel,fuelCapacity) = 83;
+    };
+
+    
+    class gm_u1300l_base: gm_wheeled_truck_base {
+        EGVAR(refuel,fuelCapacity) = 90;
+    };
+
+    class gm_u1300l_medic_base: gm_u1300l_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+
+    class gm_kat1_base;
+    class gm_kat1_451_base: gm_kat1_base {
+        EGVAR(refuel,fuelCapacity) = 270;
+    };
+    class gm_kat1_451_refuel_base: gm_kat1_451_base {
+        gm_InsigniasDefaultHazardSign = "gm_insignia_hazard_fuelF54_wht";
+        EGVAR(refuel,fuelCargo) = 4600;
+        EGVAR(refuel,hooks)[] = {{-0.60,-3.44,-0.919689},{0.60,-3.44,-0.919689}};
+    };
+
+    class gm_kat1_454_cargo_base: gm_kat1_451_base {
+        EGVAR(cargo,space) = 10;
+    };
+
+    class gm_fuchs_base: gm_wheeled_APC_base {
+        EGVAR(refuel,fuelCapacity) = 390;
+    };
+
+    class gm_fuchsa0_base;
+    class gm_fuchsa0_engineer_base: gm_fuchsa0_base {
+        transportRepair = 0;
+        EGVAR(repair,canRepair) = 1;
+    };
+
+    class gm_luchs_base: gm_wheeled_APC_base {
+        EGVAR(refuel,fuelCapacity) = 500;
+    };
+
+
+    // T R A C K E D
+    class Tank_F;
+    class gm_tracked_base: Tank_F {
+        EGVAR(cargo,hasCargo) = 1;
+        EGVAR(cargo,space) = 4;
+        EGVAR(refuel,canReceive) = 1;
+    };
+    class gm_tracked_APC_base;  
+    class gm_tracked_Tank_base;
+
+    // EAST
+    class gm_bmp1_base: gm_tracked_APC_base {
+        EGVAR(map,vehicleLightColor)[] = {0,1,0,0.1};
+        EGVAR(refuel,fuelCapacity) = 460;
+    };
+    
+    class gm_pt76_base: gm_tracked_APC_base {
+        EGVAR(refuel,fuelCapacity) = 250;
+    };
+
+    class gm_t55_base: gm_tracked_Tank_base {
+        EGVAR(refuel,fuelCapacity) = 900; // only with external tanks
+    };
+
+    class gm_zsu234_base: gm_tracked_Tank_base {
+        EGVAR(refuel,fuelCapacity) = 812;
+    };
+
+    // WEST
+    class gm_Leopard1_base;
+    class gm_Leopard1a0_base: gm_Leopard1_base {
+        EGVAR(refuel,fuelCapacity) = 955;
+    };
+
+    class gm_Gepard_base: gm_Leopard1_base {
+        EGVAR(refuel,fuelCapacity) = 985;
+    };
+
+    class gm_BPz2_base;
+    class gm_BPz2a0_base: gm_BPz2_base {
+        EGVAR(refuel,fuelCapacity) = 1160;
+    };
+
+    class gm_m113_base: gm_tracked_APC_base {
+        EGVAR(refuel,fuelCapacity) = 360;
+    };
+
+    class gm_m113a1g_base;
+    class gm_m113a1g_medic_base: gm_m113a1g_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+
+    class gm_m113a1dk_base;
+    class gm_m113a1dk_engineer_base: gm_m113a1dk_base {
+        transportRepair = 0;
+        EGVAR(repair,canRepair) = 1;
+    };
+
+    class gm_m113a1dk_medic_base: gm_m113a1dk_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+
+    // H E L I C O P T E R S
+
     class Helicopter_Base_F;
     class Helicopter_Base_H: Helicopter_Base_F {
         class EventHandlers;
     };
     class gm_helicopter_base: Helicopter_Base_H {};
+
+    // WEST
+
     class gm_bo105_base: gm_helicopter_base {
         EGVAR(map,vehicleLightColor)[] = {1,0,0,0.1};
         EGVAR(refuel,fuelCapacity) = 3700;
@@ -73,6 +249,7 @@ class CfgVehicles {
         EGVAR(refuel,fuelCapacity) = 8770;
     };
 
+    // EAST
     class gm_mi2_base:gm_helicopter_base {
         EGVAR(map,vehicleLightColor)[] = {1,0,0,0.1};
         EGVAR(fastroping,enabled) = 1;
@@ -97,6 +274,31 @@ class CfgVehicles {
 
     class gm_mi2platan_base: gm_mi2_base{
         EGVAR(refuel,fuelCapacity) = 1076;
+    };
+    
+    
+
+
+    // P L A N E S
+    class Plane_Base_F;
+    class gm_plane_base: Plane_Base_F {
+        EGVAR(refuel,canReceive) = 1;
+        EGVAR(cargo,hasCargo) = 1;
+        EGVAR(cargo,space) = 4;
+    };
+
+    // EAST
+    class gm_l410_base: gm_plane_base {
+        EGVAR(refuel,fuelCapacity) = 1300;
+    };
+
+    // WEST
+    class gm_do28d2_base: gm_plane_base {
+        EGVAR(refuel,fuelCapacity) = 894; // source mondkalb 
+    };
+
+    class gm_do28d2_medevac_base: gm_do28d2_base {
+        EGVAR(medical,medicClass) = 1;
     };
     
 };
