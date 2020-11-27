@@ -1,5 +1,75 @@
 class CfgVehicles {
 
+    class ReammoBox_F;
+    class gm_AmmoBox_base: ReammoBox_F {
+        EGVAR(cargo,size) = 1;
+        EGVAR(cargo,canLoad) = 1;
+
+        EGVAR(dragging,canCarry) = 1;
+        EGVAR(dragging,carryPosition)[] = {0,1,1};
+        EGVAR(dragging,carryDirection) = 0;
+
+        EGVAR(dragging,canDrag) = 1;
+        EGVAR(dragging,dragPosition)[] = {0,1.2,0};
+        EGVAR(dragging,dragDirection) = 0;
+    };
+
+    class gm_jerrycan_base;
+    class gm_jerrycan: gm_jerrycan_base {
+        EGVAR(cargo,size) = 1;
+        EGVAR(cargo,canLoad) = 1;
+
+        EGVAR(dragging,canCarry) = 1;
+        EGVAR(dragging,carryPosition)[] = {0,1,1};
+        EGVAR(dragging,carryDirection) = 0;
+
+        EGVAR(dragging,canDrag) = 1;
+        EGVAR(dragging,dragPosition)[] = {0,1.2,0};
+        EGVAR(dragging,dragDirection) = 0;
+    };
+    
+    ///// REPAIR, REFUEL, REARM /////
+
+
+    // TOOLKIT
+  
+    class ACE_Module;
+    class ACE_moduleRepairSettings: ACE_Module {
+        class wheelRepairRequiredItems {
+            class values {
+                class gm_repairkit_01 { name = "RepairKit"; value = 1; };
+            };
+        };
+    };
+    
+
+    // STATIC
+    class gm_ge_army_shelteraceII_repair_base;
+    class gm_ge_army_shelteraceII_repair: gm_ge_army_shelteraceII_repair_base {
+        EGVAR(repair,canRepair) = 1;
+    };
+
+    class gm_gc_army_shelterlakII_repair_base;
+    class gm_gc_army_shelterlakII_repair: gm_gc_army_shelterlakII_repair_base {
+        EGVAR(repair,canRepair) = 1;
+    };
+
+
+    class gm_ge_army_shelteraceI_medic_base;
+    class gm_ge_army_shelteraceI_medic: gm_ge_army_shelteraceI_medic_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+    
+    class gm_ge_army_shelteraceII_medic_base;
+    class gm_ge_army_shelteraceII_medic: gm_ge_army_shelteraceII_medic_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+
+    class gm_gc_army_shelterlakII_medic_base;
+    class gm_gc_army_shelterlakII_medic: gm_gc_army_shelterlakII_medic_base {
+        EGVAR(medical,medicClass) = 1;
+    };
+
     // W H E E L E D
     class gm_wheeled_base;
     class gm_wheeled_truck_base;

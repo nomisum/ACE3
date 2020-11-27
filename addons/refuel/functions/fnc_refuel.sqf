@@ -42,7 +42,7 @@ if (_maxFuel == 0) then {
     if (!alive _source || {!alive _sink}) exitWith {
         [objNull, _nozzle] call FUNC(dropNozzle);
         _nozzle setVariable [QGVAR(isConnected), false, true];
-        if (_nozzle isKindOf "Land_CanisterFuel_F") then { _nozzle setVariable [QEGVAR(cargo,canLoad), true, true]; };
+        if ({_nozzle getVariable [QGVAR(jerryCan), false]}) then { _nozzle setVariable [QEGVAR(cargo,canLoad), true, true]; };
         _nozzle setVariable [QGVAR(sink), nil, true];
         _sink setVariable [QGVAR(nozzle), nil, true];
         [_pfID] call CBA_fnc_removePerFrameHandler;
@@ -54,7 +54,7 @@ if (_maxFuel == 0) then {
 
         [objNull, _nozzle] call FUNC(dropNozzle);
         _nozzle setVariable [QGVAR(isConnected), false, true];
-        if (_nozzle isKindOf "Land_CanisterFuel_F") then { _nozzle setVariable [QEGVAR(cargo,canLoad), true, true]; };
+        if ({_nozzle getVariable [QGVAR(jerryCan), false]}) then { _nozzle setVariable [QEGVAR(cargo,canLoad), true, true]; };
         _nozzle setVariable [QGVAR(sink), nil, true];
         _sink setVariable [QGVAR(nozzle), nil, true];
         [_pfID] call CBA_fnc_removePerFrameHandler;
