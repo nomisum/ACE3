@@ -46,9 +46,6 @@ class CfgWeapons {
     
 
     class gm_ge_headgear_beret_base;
-    class gm_ge_headgear_crewhat_80_blk: gm_ge_headgear_beret_base {
-        HEARING_PROTECTION_PELTOR
-    };
     class gm_ge_headgear_beret_crew_red_antiair: gm_ge_headgear_beret_base {
         HEARING_PROTECTION_PELTOR
     };
