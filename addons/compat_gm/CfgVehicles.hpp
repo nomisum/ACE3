@@ -149,6 +149,14 @@ class CfgVehicles {
         EGVAR(cargo,hasCargo) = 1;
         EGVAR(cargo,space) = 4;
         EGVAR(refuel,canReceive) = 1;
+        EGVAR(vehicle_damage,hullDetonationProb) = 0.2;
+        EGVAR(vehicle_damage,turretDetonationProb) = 0.03;
+        EGVAR(vehicle_damage,engineDetonationProb) = 0.03;
+        EGVAR(vehicle_damage,hullFireProb) = 0.6;
+        EGVAR(vehicle_damage,turretFireProb) = 0.1;
+        EGVAR(vehicle_damage,engineFireProb) = 0.2;
+        EGVAR(vehicle_damage,detonationDuringFireProb) = 0.2;
+        EGVAR(vehicle_damage,canHaveFireRing) = 0.1;
     };  
 
     class gm_wheeled_bicycle_base: gm_wheeled_base {
@@ -166,6 +174,7 @@ class CfgVehicles {
 
     class gm_btr60_base: gm_wheeled_APC_base {
         EGVAR(refuel,fuelCapacity) = 290;
+        EGVAR(cookoff, cookoffSelections)[] = {"commanderturret_hatch"}; 
     };
 
     class gm_ural4320_base: gm_wheeled_truck_base {
@@ -242,6 +251,7 @@ class CfgVehicles {
 
     class gm_luchs_base: gm_wheeled_APC_base {
         EGVAR(refuel,fuelCapacity) = 500;
+        EGVAR(cookoff, cookoffSelections)[] = {"mainturret_hatch", "commanderturret_hatch"};
     };
 
 
@@ -252,13 +262,32 @@ class CfgVehicles {
         EGVAR(cargo,space) = 4;
         EGVAR(refuel,canReceive) = 1;
     };
-    class gm_tracked_APC_base;  
-    class gm_tracked_Tank_base;
+    class gm_tracked_APC_base: gm_tracked_base {
+        EGVAR(vehicle_damage,hullDetonationProb) = 0.03;
+        EGVAR(vehicle_damage,turretDetonationProb) = 0.03;
+        EGVAR(vehicle_damage,engineDetonationProb) = 0.03;
+        EGVAR(vehicle_damage,hullFireProb) = 0.3;
+        EGVAR(vehicle_damage,turretFireProb) = 0.1;
+        EGVAR(vehicle_damage,engineFireProb) = 0.2;
+        EGVAR(vehicle_damage,detonationDuringFireProb) = 0.2;
+        EGVAR(vehicle_damage,canHaveFireRing) = 0.1;
+    };  
+    class gm_tracked_Tank_base: gm_tracked_base {
+        EGVAR(vehicle_damage,hullDetonationProb) = 0.01;
+        EGVAR(vehicle_damage,turretDetonationProb) = 0.01;
+        EGVAR(vehicle_damage,engineDetonationProb) = 0.01;
+        EGVAR(vehicle_damage,hullFireProb) = 0.2;
+        EGVAR(vehicle_damage,turretFireProb) = 0.1;
+        EGVAR(vehicle_damage,engineFireProb) = 0.2;
+        EGVAR(vehicle_damage,detonationDuringFireProb) = 0.2;
+        EGVAR(vehicle_damage,canHaveFireRing) = 0.1;
+    };
 
     // EAST
     class gm_bmp1_base: gm_tracked_APC_base {
         EGVAR(map,vehicleLightColor)[] = {0,1,0,0.1};
         EGVAR(refuel,fuelCapacity) = 460;
+        EGVAR(cookoff, cookoffSelections)[] = {"mainturret_hatch","commanderturret_hatch"}; 
     };
     
     class gm_pt76_base: gm_tracked_APC_base {
@@ -267,6 +296,7 @@ class CfgVehicles {
 
     class gm_t55_base: gm_tracked_Tank_base {
         EGVAR(refuel,fuelCapacity) = 900; // only with external tanks
+        EGVAR(cookoff, cookoffSelections)[] = {"machinegunturret_01_hatch","commanderturret_hatch"}; 
     };
 
     class gm_zsu234_base: gm_tracked_Tank_base {
@@ -277,6 +307,7 @@ class CfgVehicles {
     class gm_Leopard1_base;
     class gm_Leopard1a0_base: gm_Leopard1_base {
         EGVAR(refuel,fuelCapacity) = 955;
+        EGVAR(cookoff, cookoffSelections)[] = {"mainturret_hatch_1","commanderturret_hatch"}; 
     };
 
     class gm_Gepard_base: gm_Leopard1_base {
@@ -286,6 +317,12 @@ class CfgVehicles {
     class gm_BPz2_base;
     class gm_BPz2a0_base: gm_BPz2_base {
         EGVAR(refuel,fuelCapacity) = 1160;
+        EGVAR(cookoff, cookoffSelections)[] = {"commanderturret_hatch"}; 
+    };
+
+    class gm_marder1_base: gm_tracked_APC_base {
+        EGVAR(refuel,fuelCapacity) = 652;
+        EGVAR(cookoff, cookoffSelections)[] = {"observerturret_hatch", "commanderturret_hatch"};
     };
 
     class gm_m113_base: gm_tracked_APC_base {
