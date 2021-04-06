@@ -174,7 +174,7 @@ class CfgVehicles {
 
     class gm_btr60_base: gm_wheeled_APC_base {
         EGVAR(refuel,fuelCapacity) = 290;
-        EGVAR(cookoff, cookoffSelections)[] = {"commanderturret_hatch"}; 
+        EGVAR(cookoff,cookoffSelections)[] = {"commanderturret_hatch"}; 
     };
 
     class gm_ural4320_base: gm_wheeled_truck_base {
