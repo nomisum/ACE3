@@ -251,7 +251,7 @@ class CfgVehicles {
 
     class gm_luchs_base: gm_wheeled_APC_base {
         EGVAR(refuel,fuelCapacity) = 500;
-        EGVAR(cookoff, cookoffSelections)[] = {"mainturret_hatch", "commanderturret_hatch"};
+        EGVAR(cookoff,cookoffSelections)[] = {"mainturret_hatch", "commanderturret_hatch"};
     };
 
 
@@ -287,7 +287,7 @@ class CfgVehicles {
     class gm_bmp1_base: gm_tracked_APC_base {
         EGVAR(map,vehicleLightColor)[] = {0,1,0,0.1};
         EGVAR(refuel,fuelCapacity) = 460;
-        EGVAR(cookoff, cookoffSelections)[] = {"mainturret_hatch","commanderturret_hatch"}; 
+        EGVAR(cookoff,cookoffSelections)[] = {"mainturret_hatch","commanderturret_hatch"}; 
     };
     
     class gm_pt76_base: gm_tracked_APC_base {
@@ -296,7 +296,7 @@ class CfgVehicles {
 
     class gm_t55_base: gm_tracked_Tank_base {
         EGVAR(refuel,fuelCapacity) = 900; // only with external tanks
-        EGVAR(cookoff, cookoffSelections)[] = {"machinegunturret_01_hatch","commanderturret_hatch"}; 
+        EGVAR(cookoff,cookoffSelections)[] = {"machinegunturret_01_hatch","commanderturret_hatch"}; 
     };
 
     class gm_zsu234_base: gm_tracked_Tank_base {
@@ -307,7 +307,7 @@ class CfgVehicles {
     class gm_Leopard1_base;
     class gm_Leopard1a0_base: gm_Leopard1_base {
         EGVAR(refuel,fuelCapacity) = 955;
-        EGVAR(cookoff, cookoffSelections)[] = {"mainturret_hatch_1","commanderturret_hatch"}; 
+        EGVAR(cookoff,cookoffSelections)[] = {"mainturret_hatch_1","commanderturret_hatch"}; 
     };
 
     class gm_Gepard_base: gm_Leopard1_base {
@@ -317,12 +317,12 @@ class CfgVehicles {
     class gm_BPz2_base;
     class gm_BPz2a0_base: gm_BPz2_base {
         EGVAR(refuel,fuelCapacity) = 1160;
-        EGVAR(cookoff, cookoffSelections)[] = {"commanderturret_hatch"}; 
+        EGVAR(cookoff,cookoffSelections)[] = {"commanderturret_hatch"}; 
     };
 
     class gm_marder1_base: gm_tracked_APC_base {
         EGVAR(refuel,fuelCapacity) = 652;
-        EGVAR(cookoff, cookoffSelections)[] = {"observerturret_hatch", "commanderturret_hatch"};
+        EGVAR(cookoff,cookoffSelections)[] = {"observerturret_hatch", "commanderturret_hatch"};
     };
 
     class gm_m113_base: gm_tracked_APC_base {
