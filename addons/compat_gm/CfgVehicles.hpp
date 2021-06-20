@@ -363,8 +363,7 @@ class CfgVehicles {
         EGVAR(refuel,fuelCapacity) = 3700;
         EGVAR(fastroping,enabled) = 0;
 
-        class UserActions
-            {
+        class UserActions {
                 class openDoor_L
                 {
                     displayNameDefault = "Open left Door";
