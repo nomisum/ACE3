@@ -2,7 +2,7 @@
 /*
  * Author: nomisum
  * Function for animating ropes (first introduced for GM Bo 105)
- * original onCut seems more like a onStowFRIES
+ * Original onCut seems more like a onStowFRIES.
  *
  * Arguments:
  * 0: Helicopter <OBJECT>
