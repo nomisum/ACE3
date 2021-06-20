@@ -478,5 +478,4 @@ class CfgVehicles {
     class gm_do28d2_medevac_base: gm_do28d2_base {
         EGVAR(medical,medicClass) = 1;
     };
-    
 };
