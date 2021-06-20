@@ -17,6 +17,6 @@
  */
 params ["_vehicle"];
 
-_vehicle animateSource ["swooperRopes_unhide",0, true];
+_vehicle animateSource ["swooperRopes_unhide", 0, true];
 
 0
