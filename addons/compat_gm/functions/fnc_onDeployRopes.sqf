@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 /*
  * Author: nomisum
- * Function for animating ropes when actually dropping (first introduced for GM Bo 105)
- * original onPrepare already animates when preparing FRIES
+ * Function for animating ropes when actually dropping (first introduced for GM Bo 105).
+ * Original onPrepare already animates when preparing FRIES.
  *
  * Arguments:
  * 0: Helicopter <OBJECT>

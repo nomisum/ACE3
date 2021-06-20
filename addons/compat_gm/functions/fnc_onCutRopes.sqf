@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 /*
  * Author: nomisum
- * Function for animating ropes (first introduced for GM Bo 105)
- * Original onCut runs when _stowing_ FRIES
+ * Function for animating ropes (first introduced for GM Bo 105).
+ * Original onCut runs when _stowing_ FRIES.
  *
  * Arguments:
  * 0: Helicopter <OBJECT>
