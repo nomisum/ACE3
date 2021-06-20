@@ -164,6 +164,10 @@ class CfgVehicles {
         EGVAR(refuel,canReceive) = 0;
     };
 
+    class gm_uaz469_base: gm_wheeled_car_base {
+        EGVAR(refuel,fuelCapacity) = 78;
+    };
+
     class gm_p601_base: gm_wheeled_car_base {
         EGVAR(refuel,fuelCapacity) = 26;
     };
